@@ -254,11 +254,11 @@ cmd_dot3power(struct lldpctl_conn_t *conn, struct writer *w,
 			ok = 0;
 		} else {
 			if (cmdenv_get(env, "typeat")) {
-				if (!cmd_dot3power_conf_at(conn, w, env, dot3_power, name))
+				if (cmd_dot3power_conf_at(conn, w, env, dot3_power, name))
 					ok = 0;
 			}
 			if (cmdenv_get(env, "type-ext")) {
-				if (!cmd_dot3power_conf_bt(conn, w, env, dot3_power, name))
+				if (cmd_dot3power_conf_bt(conn, w, env, dot3_power, name))
 					ok = 0;
 			}
 		}
